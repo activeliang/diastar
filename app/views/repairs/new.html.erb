@@ -1,0 +1,15 @@
+<div class="container">
+    <h2 class="text-center">添加维修记录<small><%= @equib.title %>
+            >
+            <%= @equib.position %></small>
+    </h2>
+
+    <%= simple_form_for [@equib, @repair] do |f| %>
+    <div class="group"><%= f.input :cause %></div>
+    <div class="group"><%= f.input :method %></div>
+    <div class="group"><%= f.input :fees %></div>
+    <div class="group"><%= f.input :is_wireman %></div>
+    <%= f.submit '提交', data: {disable_with: "提交中...."}, class: "btn btn-primary btn-lg"%>
+    <% end %>
+
+</div>

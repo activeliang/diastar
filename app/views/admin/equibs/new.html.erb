@@ -1,0 +1,20 @@
+<h2>新增设备</h2>
+
+<%= simple_form_for [:admin,@equib] do |f| %>
+<div class="group_form"><%= f.input :title,label:"名称"%></div>
+<div class="group_form"><%= f.input :department,label:"所属部门"%></div>
+<div class="group_form"><%= f.input :position,label:"存放位置"%></div>
+<div class="group_form"><%= f.input :principal,label:"负责人"%></div>
+<div class="group_form"><%= f.input :purchase_date,label:"购入日期"%></div>
+<div class="group_form"><%= f.input :is_for_production,label:"是否为生产设备"%></div>
+<div class="group_form"><%= f.input :use_state,label:"使用状态"%></div>
+<div class="group_form"><%= f.input :origin,label:"产地"%></div>
+<div class="group_form"><%= f.input :model,label:"型号"%></div>
+<div class="group_form"><%= f.input :supplier,label:"供应商"%></div>
+<div class="group_form"><%= f.input :warranty,label:"保修期"%></div>
+<div class="group_form"><%= f.input :description,label:"描述"%></div>
+<div class="group_form"><%= f.input :price,label:"价格"%></div>
+<div class="group_form"><%= f.input :age_limit,label:"年限"%></div>
+<!-- <div class="group_form"><%= f.input :image, as: :file, class: "btn btn-default"%></div> -->
+<%= f.submit '提交',data: {disable_with: "Submiting..."}, class: "btn btn-primary"%>
+<% end %>

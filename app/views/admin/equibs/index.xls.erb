@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<Workbook
+    xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:x="urn:schemas-microsoft-com:office:excel"
+    xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+    xmlns:html="http://www.w3.org/TR/REC-html40">
+    <Worksheet ss:Name="Sheet1">
+        <Table>
+            <Row>
+                <Cell>
+                    <Data ss:Type="String">ID</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">设备名称</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">所属部门</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">存在位置</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">负责人</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">购买日期</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">是否生产设备</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">状态</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">产地</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">型号</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">供应商</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">保修期</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">备注</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">单价</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">年限</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">图片</Data>
+                </Cell>
+
+            </Row>
+            <% @equibs.each do |equib| %>
+            <Row>
+                <Cell>
+                    <Data ss:Type="Number"><%= equib.id %></Data>
+                </Cell>
+                <Data ss:Type="String"><%= equib.title %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.department %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.position %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.principal %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.purchase_date %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.is_for_production %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.use_state %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.origin %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.model %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.supplier %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.warranty %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.description %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.price %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.age_limit %></Data>
+            </Cell>
+            <Cell>
+                <Data ss:Type="String"><%= equib.image %></Data>
+            </Cell>
+
+        </Row>
+        <% end %>
+    </Table>
+</Worksheet>
+</Workbook>

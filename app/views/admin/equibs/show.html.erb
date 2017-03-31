@@ -1,0 +1,55 @@
+<h1 class="text-center">设备信息<small><%= @equib.title %>(<%= @equib.department %>)</small>
+</h1>
+<br/><br/><hr/>
+
+<div class="row">
+    <div class="col-xs-6">
+        <% if @equib.image.present? %>
+        <%= image_tag(@equib.image.medium.url, class: "thumbnail")%>
+    <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+        <% end %>
+    </div>
+    <div class="col-xs-6">
+        <div class="well">
+            <div class="group-info">设备名称：<%= @equib.title%></div>
+            <div class="group-info">备注：<%= @equib.description%></div>
+            <div class="group-info">所属部门：<%= @equib.department%></div>
+            <div class="group-info">负责人：<%= @equib.principal%></div>
+            <div class="group-info">使用状态：<%= @equib.use_state%></div>
+            <div class="group-info">产地：<%= @equib.origin%></div>
+            <div class="group-info">型号：<%= @equib.model%></div>
+            <div class="group-info">购买日期：<%= @equib.purchase_date%></div>
+            <div class="group-info">是否为生产设备：<%= @equib.is_for_production%></div>
+            <hr/>
+            <%= link_to("纠错", '#',class: "btn btn-info btn-md ")%>
+            <br/>
+            <hr/>
+        </div>
+    </div>
+</div>
+
+<h2 class="text-center">维修记录</h2>
+<%= link_to("添加维修记录",new_equib_repair_path(@equib), class: "btn btn-danger pull-db")%>
+<p class="pull-right">
+    累计维修金额
+    <span class="label label-danger" style="font-size:200%">
+        ¥<%= render_total_fees(@equib)%></span>
+</p>
+<% @repairs.each do |repair| %>
+<div class="col-xs-12 well">
+    <p>故障原因：<%= repair.cause %></p>
+    <p>维修项目：<%= repair.method %></p>
+    <h5>维修费用：<%= repair.fees %>
+        <% if repair.is_wireman? %>
+        <span class="label label-success label-sm">内部维修</span>
+    <% else %>
+        <span class="label label-danger label-sm">外部维修</span>
+        <% end %>
+    </h5>
+    <p><%= repair.created_at.to_s(:db)%></p>
+
+</div>
+<% end %>
+
+<%= raw @qr.as_html %>
