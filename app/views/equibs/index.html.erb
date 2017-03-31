@@ -1,36 +1,43 @@
-<h2 class="text-center">机器列表</h2>
+<div class="container">
+  <h2 class="text-center">机器列表</h2>
 
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>图片</th>
-            <th>机器名称</th>
-            <th>所属部门</th>
-            <th>存放位置</th>
+  <table class="table table-bordered table-hover">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>图片</th>
+              <th>机器名称</th>
+              <th>所属部门</th>
+              <th>存放位置</th>
+              <th>机器型号</th>
+              <th>购入日期</th>
 
-        </tr>
-    </thead>
-    <tbody>
-        <% @equibs.each do |equib| %>
-        <tr>
-            <td><%= equib.id %></td>
-            <td>
-                <%= link_to equib_path(equib) do %>
-                <% if equib.image.present? %>
-                <%= image_tag(equib.image.thumb.url, class: "thumbnail")%>
-            <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
-                <% end %>
-                <% end %>
-            </td>
+          </tr>
+      </thead>
+      <tbody>
+          <% @equibs.each do |equib| %>
+          <tr>
+              <td><%= equib.id %></td>
+              <td>
+                  <%= link_to equib_path(equib) do %>
+                  <% if equib.image.present? %>
+                  <%= image_tag(equib.image.thumb.url, class: "thumbnail")%>
+              <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+                  <% end %>
+                  <% end %>
+              </td>
 
-            <td><%= link_to(equib.title,equib_path(equib))%></td>
-            <td><%= equib.department %></td>
-            <td><%= equib.position %></td>
+              <td><%= link_to(equib.title,equib_path(equib))%></td>
+              <td><%= equib.department %></td>
+              <td><%= equib.position %></td>
+              <td><%= equib.model%></td>
+              <td><%= equib.purchase_date%></td>
 
-        </tr>
-        <% end %>
-    </tbody>
-</table>
-<span>
+          </tr>
+          <% end %>
+      </tbody>
+  </table>
+  <span>
+
+</div>

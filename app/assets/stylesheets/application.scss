@@ -27,7 +27,24 @@ abbr,acronym { border:0}
 @import "bootstrap";
 @import "bootstrap-sprockets";
 @import "font-awesome";
-@import "style";
+@import "font";
+
+
+// 以下是导航栏
+
+.navbar-inverse {
+    background-color: #212121;//背景颜色
+    border-color: #212121;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 20px;
+}
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
+}
 
 
 
