@@ -42,7 +42,7 @@ class Admin::EquibsController < ApplicationController
     @equib = Equib.find(params[:id])
     @repairs = @equib.repairs
 
-    @qr = RQRCode::QRCode.new(@equib_url.to_s, :size => 4, :level => :h )
+    @qr = RQRCode::QRCode.new(equib_url(@equib).to_s, :size => 4, :level => :h )
   end
 
   def destroy
