@@ -6,9 +6,9 @@
   <div class="row">
       <div class="col-xs-6 col-xs-12">
           <% if @equib.image.present? %>
-          <%= image_tag(@equib.image.medium.url, class: "thumbnail img-responsive")%>
+          <%= image_tag(@equib.image.medium.url, class: "thumbnail img-responsive hihi")%>
       <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive")%>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive hihi")%>
           <% end %>
       </div>
       <div class="col-xs-6 col-xs-12">
@@ -58,9 +58,10 @@
 
   </div>
   <% end %>
-  <div class="rqrcode panel">
+  <br/>
+  <h3 class="text-center">机器二维码标签</h3><hr/>
+  <div class="rqrcode panel" >
       <%= raw @qr.as_html %>
   </div>
-
 
 </div>
