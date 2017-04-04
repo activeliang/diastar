@@ -4,24 +4,29 @@
   <br/><br/><hr/>
 
   <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-6 col-xs-12">
           <% if @equib.image.present? %>
-          <%= image_tag(@equib.image.medium.url, class: "thumbnail")%>
+          <%= image_tag(@equib.image.medium.url, class: "thumbnail img-responsive")%>
       <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive")%>
           <% end %>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-6 col-xs-12">
           <div class="well">
-              <div class="group-info">设备名称：<%= @equib.title%></div>
-              <div class="group-info">备注：<%= @equib.description%></div>
-              <div class="group-info">所属部门：<%= @equib.department%></div>
-              <div class="group-info">负责人：<%= @equib.principal%></div>
-              <div class="group-info">使用状态：<%= @equib.use_state%></div>
-              <div class="group-info">产地：<%= @equib.origin%></div>
-              <div class="group-info">型号：<%= @equib.model%></div>
-              <div class="group-info">购买日期：<%= @equib.purchase_date%></div>
-              <div class="group-info">是否为生产设备：<%= @equib.is_for_production%></div>
+            <h5>机器名称：<%= @equib.title%></h5>
+            <h5>机器备注：<%= @equib.description%></h5>
+            <h5>所属部门：<%= @equib.department%></h5>
+            <h5>存放位置：<%= @equib.position%></h5>
+            <h5>机器型号：<%= @equib.model%></h5>
+            <h5>负责人：<%= @equib.principal%></h5>
+            <h5>供应商：<%= @equib.supplier%></h5>
+            <h5>保修期：<%= @equib.warranty%></h5>
+            <h5>产地：<%= @equib.origin%></h5>
+            <h5>购入日期：<%= @equib.purchase_date%></h5>
+            <h5>是否为生产设备：<%= @equib.is_for_production%></h5>
+            <h5>价格：<%= @equib.price%></h5>
+            <h5>年限<%= @equib.age_limit%></h5>
+            <h5>使用状态：<%= @equib.use_state%></h5>
               <hr/>
               <%= link_to("纠错", '#',class: "btn btn-info btn-md ")%>
               <br/>
@@ -32,9 +37,10 @@
 
   <h2 class="text-center">维修记录</h2>
   <%= link_to("添加维修记录",new_equib_repair_path(@equib), class: "btn btn-danger pull-db")%>
+  <hr/>
   <p class="pull-right">
       累计维修金额
-      <span class="label label-danger" style="font-size:200%">
+      <span class="label label-danger" style="font-size:150%">
           ¥<%= render_total_fees(@equib)%></span>
   </p>
   <% @repairs.each do |repair| %>
@@ -52,5 +58,9 @@
 
   </div>
   <% end %>
+  <div class="rqrcode panel">
+      <%= raw @qr.as_html %>
+  </div>
+
 
 </div>

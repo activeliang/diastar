@@ -17,7 +17,7 @@ class Admin::EquibsController < ApplicationController
 
   def index
     @equibs = Equib.all
-
+    flash[:notice] = "测试版，所有权限暂时开放！"
     respond_to do |format|
       format.html
       format.csv { send_data @equibs.to_csv }
@@ -42,7 +42,7 @@ class Admin::EquibsController < ApplicationController
     @equib = Equib.find(params[:id])
     @repairs = @equib.repairs
 
-    @qr = RQRCode::QRCode.new(equib_url(@equib).to_s, :size => 4, :level => :h )
+    @qr = RQRCode::QRCode.new(equib_url(@equib).to_s, :size => 5, :level => :h )
   end
 
   def destroy
