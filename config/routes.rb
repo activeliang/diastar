@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :equibs do
     resources :repairs
   end
+
+  resources :welcomes do
+    get 'meter'
+  end
 end

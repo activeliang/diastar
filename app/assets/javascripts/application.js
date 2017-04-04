@@ -15,6 +15,7 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap/modal
+//= require bootstrap-sprockets
 //= require index
 //= require pixi.min
 //= require_tree .

@@ -171,3 +171,39 @@ input[type=password]:hover {
 .login-help {
     font-size: 12px;
 }
+
+
+// 以下是对表单的修改。
+
+.form-group-bc {
+  background-color: #ccffcc;
+  padding: 30px;
+}
+// .form_title {
+//   float: left;
+// }
+// .form_department {
+//   float: left;
+// }
+// .form_position {
+//   float: left;
+// }
+// .form_principal {
+//   float: left;
+// }
+// .form_use_
+
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+    text-align: left;
+    padding: 8px;
+}
