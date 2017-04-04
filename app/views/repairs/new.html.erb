@@ -5,10 +5,10 @@
     </h2>
 
     <%= simple_form_for [@equib, @repair] do |f| %>
-    <div class="group"><%= f.input :cause %></div>
-    <div class="group"><%= f.input :method %></div>
-    <div class="group"><%= f.input :fees %></div>
-    <div class="group"><%= f.input :is_wireman %></div>
+    <div class="group"><%= f.input :cause, label: "故障原因"%></div>
+    <div class="group"><%= f.input :method, label: "维修项目"%></div>
+    <div class="group"><%= f.input :fees, label: "费用"%></div>
+    <div class="group"><%= f.input :is_wireman, label: "是否内部电工维修"%></div>
     <%= f.submit '提交', data: {disable_with: "提交中...."}, class: "btn btn-primary btn-lg"%>
     <% end %>
 
